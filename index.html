@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Digital ID</title>
+    <title>Hexagon Digital ID</title>
     <style>
       body {
         font-family: Arial, sans-serif;
-        background-color: #f9f9f9;
+        background-color: #f4f4f4;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -15,115 +15,135 @@
         margin: 0;
       }
 
-      .id-card-container {
-        background-color: #b20a0b;
-        width: 380px;
-        padding: 15px;
-        border-radius: 15px;
+      .card {
+        position: relative;
+        width: 600px;
+        margin: 0 auto;
+        background-color: #b20a0b; /* Red background for card */
+        padding: 20px;
+        border-radius: 16px;
+        height: 700px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
       }
-      .id-card {
-        background-color: #fff; /* সাদা কার্ড */
-        border-radius: 15px;
-        text-align: center;
-
-        /* box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); */
-      }
-      /* .id-card {
-        width: 400px;
-        background-color: #fff;
-        border: 2px solid #b20a0b;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        text-align: center;
-      } */
 
       .header {
-        background-color: #b20a0b;
-        color: #fff;
-        padding-bottom: 5px;
-      }
-
-      .logo img {
-        margin: 5px 0;
-        width: 150px;
-        height: 150px;
-      }
-
-      .info {
-        margin: 5px 0;
-        padding: 5px 0px;
-      }
-
-      .info h2 {
-        font-size: 25px;
-        font-weight: normal;
-        padding: 0px 5px;
-        margin-top: 2px;
-      }
-
-      .info .ph {
-        font-size: 25px;
-        font-weight: normal;
-        margin-top: -20px;
-      }
-
-      .gca-id {
+        text-align: center;
+        color: white;
+        font-size: 1.5rem;
         font-weight: bold;
+        padding: 5px 0;
+        width: 100%;
+      }
+
+      .hexagon {
+        position: relative;
+        background: white;
+        padding: 16px;
+        clip-path: polygon(
+          10% 0,
+          90% 0,
+          100% 10%,
+          100% 90%,
+          90% 100%,
+          10% 100%,
+          0 90%,
+          0 10%
+            /* 20% 0%,
+            80% 0%,
+            100% 20%,
+            100% 80%,
+            80% 100%,
+            20% 100%,
+            0% 80%,
+            0% 20% */
+            /* 25% 0%,
+            75% 0%,
+            100% 25%,
+            100% 75%,
+            75% 100%,
+            25% 100%,
+            0% 75%,
+            0% 25% */
+        );
+        border-radius: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 540px;
+        height: 640px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hexagon img {
+        width: 160px;
+        height: 180px;
+      }
+
+      .hexagon h2 {
+        text-align: center;
         font-size: 30px;
+        margin: 2px 0 4px;
+        color: #333;
+      }
+
+      .hexagon p {
+        text-align: center;
+        color: #333;
+        font-size: 28px;
+        margin: 4px 0;
+      }
+      .hexagon p strong {
         color: #b20a0b;
       }
 
-      .qr-code img {
-        width: 120px;
-        margin: 10px 0;
+      .hexagon .span {
+        display: block;
+        /* text-align: ; */
+        width: 100%;
+        margin-left: 165px;
       }
 
-      .vehicle {
-        margin: 10px 20px 0px;
-        font-size: 14px;
-        text-align: start;
+      .hexagon hr {
+        width: 80%;
+        border: none;
+        border-top: 2px solid #a09c9c;
+        margin: 10px 4px;
       }
 
       .footer {
-        background-color: #b20a0b;
-        padding: 5px 0px;
-        font-size: 12px;
+        position: relative;
+        text-align: center;
         color: white;
+        font-size: 14px;
+        padding: 0px 2px;
+        padding-top: 20px;
       }
     </style>
   </head>
   <body>
-    <div class="">
-      <div class="id-card-container">
-        <div class="id-card">
-          <div class="header">
-            <h1>Digital ID</h1>
-          </div>
-          <div class="logo">
-            <img src="https://i.ibb.co.com/zF1yk4F/logo.png" alt="Logo" />
-          </div>
-          <div class="info">
-            <h1 class="ph">AHMAD SAEED SHAH</h1>
-            <h2>+971 52 380 7991</h2>
-            <hr class="hr" />
-            <h2 class="gca-id">GCA ID: GCA001</h2>
-            <hr />
-          </div>
-          <div class="qr-code">
-            <img
-              src="https://i.ibb.co.com/SVvRjRj/1200px-QR-Code-Example-svg.png"
-              alt="QR Code"
-            />
-          </div>
-          <hr />
-          <div class="vehicle">
-            <p>VEHICLE: __________</p>
-          </div>
-          <div class="footer">
-            <p>+971 558 800 800 | +971 568 900 900 |GULFCARAAUCTION.COM</p>
-          </div>
-        </div>
+    <div class="card">
+      <div class="header">DIGITAL ID</div>
+      <div class="hexagon">
+        <img src="https://i.ibb.co/zF1yk4F/logo.png" alt="Logo" />
+        <h2>AHMAD SAEED SHAH</h2>
+        <p>+971 52 380 7991</p>
+        <hr />
+        <p><strong>GCA ID: GCA001</strong></p>
+        <hr />
+
+        <img
+          src="https://i.ibb.co.com/SVvRjRj/1200px-QR-Code-Example-svg.png"
+          alt="QR Code"
+        />
+        <hr />
+        <span class="span">VEHICLE: __________</span>
+      </div>
+      <div class="footer">
+        +971 558 800 800 | +971 568 900 900 | GULFCARAUCTION.COM
       </div>
     </div>
   </body>
