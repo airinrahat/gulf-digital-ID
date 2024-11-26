@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bill of Sale</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+      }
+
+      .invoice-container {
+        max-width: 800px;
+        margin: 20px auto;
+        background: #fff;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .header div {
+        text-align: left;
+      }
+
+      .title {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .company-info {
+        margin-bottom: 20px;
+        padding-left: 30px;
+      }
+      .company-info h4 {
+        margin: 0;
+        padding-bottom: 8px;
+      }
+      .company-info p {
+        margin: 0;
+        padding: 5px 0px;
+      }
+
+      .bill-to {
+        margin-bottom: 20px;
+        padding-left: 30px;
+      }
+      .bill-hr {
+        width: 140px;
+        border: 1px solid #555;
+      }
+
+      .bill-to h3 {
+        font-size: 16px;
+      }
+      .customername {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+      }
+      .customername div p {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+      }
+      .customeraddress {
+        margin: 15px 0;
+      }
+
+      /* .bill-to h3 {
+        color: black;
+        padding: 5px;
+        font-size: 14px;
+        margin: 0 0 10px 0;
+      }
+
+      .bill-to p {
+        margin: 2px 0;
+        font-size: 14px;
+      } */
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+
+      table th,
+      table td {
+        padding: 8px;
+        text-align: center;
+        font-size: 14px;
+      }
+      .tab-hr {
+        margin: 0px 15px;
+      }
+      /* .totals {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .payment-history {
+        margin-top: 20px;
+      }
+
+      .payment-history h4 {
+        margin-bottom: 10px;
+        font-size: 16px;
+      } */
+
+      .payment-section {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        max-width: 800px;
+        background: #fff;
+        margin-top: 2px;
+      }
+
+      /* Table Styling */
+      .payment-history {
+        flex: 3;
+        padding-left: 12px;
+      }
+
+      .payment-history h4 {
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+
+      .payment-history table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .payment-history th,
+      .payment-history td {
+        padding: 8px;
+        text-align: start;
+        font-size: 16px;
+        margin-bottom: 50px;
+      }
+
+      /* Vertical Line (HR) */
+      .vertical-line {
+        width: 2px;
+        background: #ddd;
+        margin: 0 20px;
+      }
+
+      /* Totals Section */
+      .totals {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 16px;
+        margin-top: 20px;
+        gap: 5px;
+        margin-bottom: 300px;
+      }
+
+      .totals p {
+        margin: 5px 0;
+        font-size: 16px;
+      }
+
+      .totals strong {
+        color: #333;
+      }
+
+      .terms {
+        font-size: 12px;
+        color: #555;
+        margin-top: 10px;
+      }
+      .terms p {
+        margin-left: 20px;
+      }
+      .term-due {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .term-due-text {
+        color: #b20a0b;
+      }
+      .due-date {
+        font-size: 14px;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        border-top: 2px solid #000;
+        padding-top: 10px;
+        margin-top: 20px;
+      }
+      .footer span {
+        color: #b20a0b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="invoice-container">
+      <!-- Header Section -->
+      <div class="header">
+        <div>
+          <p>DATE OF ISSUE: [DD-MMM-YYYY]</p>
+        </div>
+        <div>
+          <p>INVOICE #: [INVOICE ID]</p>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <div class="title">BILL OF SALE</div>
+      <hr class="bill-hr" />
+
+      <!-- Company Info -->
+      <div class="company-info">
+        <h4>Gulf Cars Auction LLC</h4>
+        <p>
+          6404-1, Block D - near Emirates Industrial City - Al Sajaah - Sharjah
+        </p>
+        <p>+971 558 800 800 | +971 568 900 900 | 06 532 5882</p>
+      </div>
+
+      <!-- Bill To Section -->
+      <div class="bill-to">
+        <h3>BILL TO</h3>
+        <div class="customername">
+          <div>
+            <p>Customer Name/Company Name: [Name]</p>
+          </div>
+          <div>
+            <p>Customer ID: [GCA00001]</p>
+          </div>
+        </div>
+        <div class="customername customeraddress">
+          <div>
+            <p>ADDRESS: [Address]</p>
+          </div>
+          <div>
+            <p>CONTACT #: [Contact #]</p>
+          </div>
+        </div>
+        <div class="customername">
+          <div>
+            <p>EMAIL: [Email]</p>
+          </div>
+          <div>
+            <p>TRN : [If Customer is Company]</p>
+          </div>
+        </div>
+        <hr />
+      </div>
+
+      <!-- Items Table -->
+      <table>
+        <thead>
+          <tr>
+            <th>TxID</th>
+            <th>MAKE MODEL YEAR</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+            <th>VAT</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1234</td>
+            <td>Nissan Armada 2021<br />(3E03GODNRM3225761)</td>
+            <td>1</td>
+            <td>10,000</td>
+            <td>500</td>
+            <td>10,500</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr class="tab-hr" />
+      <div class="payment-section">
+        <!-- Payment History -->
+        <div class="payment-history">
+          <h4>PAYMENT HISTORY</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>TxID</th>
+                <th>Date</th>
+                <th>Due Amount</th>
+                <th>Paid</th>
+                <th>Balance</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>tx1Inv-10</td>
+                <td>dd-mm-yy</td>
+                <td>10,500</td>
+                <td>525</td>
+                <td>9,975</td>
+              </tr>
+              <tr>
+                <td>tx2Inv-10</td>
+                <td>dd-mm-yy</td>
+                <td>9,975</td>
+                <td>5,000</td>
+                <td>4,975</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Vertical Line -->
+        <div class="vertical-line"></div>
+
+        <!-- Totals Section -->
+        <div class="totals">
+          <p><strong>Total:10,500</strong></p>
+          <p><strong>Discount:0</strong></p>
+          <p><strong>Paid:525</strong></p>
+          <p><strong>Balance:9,975</strong></p>
+        </div>
+      </div>
+      <hr />
+
+      <!-- Terms -->
+      <div class="terms">
+        <div class="term-due">
+          <div class="term-due-text">
+            You must pay the entire amount by the deadline. If not, you will be
+            charged for storage.
+          </div>
+          <div class="due-date">DUE DATE:[DD-MMM-YYYY]</div>
+        </div>
+        <p>
+          For questions concerning this order, please contact at,<br />
+          Contact #: +971 558 800 800<br />
+          Email: info@gulfcarsauction.com
+        </p>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div><span>Toll Free:</span> 800 900 900</div>
+        <div><span>gluf</span>carauction.com</div>
+      </div>
+    </div>
+  </body>
+</html>
